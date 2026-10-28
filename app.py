@@ -1,7 +1,7 @@
 
 from pathlib import Path
 from io import BytesIO
-
+from scripts.setup_data import prepare_raw_data
 import altair as alt
 import numpy as np
 import pandas as pd
@@ -35,13 +35,19 @@ def get_model():
     return load_predictor()
 
 
-@st.cache_data
+
+@st.cache_data(show_spinner="Preparing NASA sample data...")
 def load_sample_data():
+    # On cloud deployment, raw data will not exist initially.
+    # Download and extract it automatically when required.
+    if not DATA_PATH.is_file():
+        prepare_raw_data()
+
     return pd.read_csv(
         DATA_PATH,
         sep=r"\s+",
         header=None,
-        names=COLUMNS,
+        names=COLUMNS
     )
 
 
