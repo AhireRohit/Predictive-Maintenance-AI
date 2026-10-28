@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+xgboost
+torch
+streamlit
+altair
+pytest
+ipykernel

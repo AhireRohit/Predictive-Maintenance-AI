@@ -1,0 +1,41 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE and local settings
+.vscode/
+.idea/
+
+# NASA dataset
+data/raw/
+data/CMAPSSData.zip
+
+# Generated datasets
+data/processed/*
+
+# Keep evaluation results for dashboard
+!data/processed/xgboost_official_predictions.csv
+!data/processed/lstm_official_predictions.csv
+
+# Keep demo CSV
+!data/processed/engine_25_demo.csv
+
+# Temporary outputs
+outputs/
+
+# Development backups
+app_backup_step30.py
+
+# Local environment variables
+.env
+.env.*
+
+.venv-repro/
+
+# Local AI development tools
+.agents/
+.claude/
